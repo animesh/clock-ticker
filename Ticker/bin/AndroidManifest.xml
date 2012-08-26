@@ -14,7 +14,7 @@
     </application>
 
     <uses-permission android:name="android.permission.VIBRATE" />
-    <receiver android:name=".service.HourlyReminder" android:process=":remote" />
+    <receiver android:name=".HourlyReminder" android:process=":remote" />
 
 </manifest> 
 
