@@ -13,6 +13,9 @@
         </activity>
     </application>
 
-<uses-permission android:name="android.permission.VIBRATE" />
-<receiver android:name=".service.FavoriteTeamDownloadReceiver" android:process=":remote" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <receiver android:name=".service.HourlyReminder" android:process=":remote" />
+
 </manifest> 
+
+<!-- http://android.programmerguru.com/android-vibrate-example/  -->

@@ -4,19 +4,27 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
  
- 
-    <TextView
-        android:id="@+id/textView2"
+     <TextView
+        android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hourly Reminder"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+ 
  
     <DigitalClock
         android:id="@+id/digitalClock1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hourly Reminder" />
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dip"
+        android:text="Vibrate" />
  
 </LinearLayout>
 
