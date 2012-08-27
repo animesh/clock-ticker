@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="Clock.Reminder"
-      android:versionCode="1"
-      android:versionName="1.0">
-<uses-sdk android:minSdkVersion="9" android:targetSdkVersion="9" />
+          package="Clock.Reminder"
+          android:versionCode="1"
+          android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="9" android:targetSdkVersion="9" />
     <application android:icon="@drawable/fuzzylife" android:label="@string/app_name" >
         <activity android:name="Check"
                   android:label="@string/app_name">
@@ -14,11 +14,18 @@
         </activity>
     </application>
     <uses-permission android:name="android.permission.VIBRATE" />
-    <receiver android:name=".HourlyReminder" android:exported="true">
-         <intent-filter>
-                <action android:name="android.intent.action.HourlyReminder" />
-            </intent-filter>
+
+    <uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>
+    <receiver  android:process=":remote" android:name="HourlyReminder"></receiver>
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission>
+    <receiver android:name=".TickerBoot">
+        <intent-filter>
+            <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+        </intent-filter>
     </receiver>
+
 </manifest> 
 
 <!-- http://android.programmerguru.com/android-vibrate-example/  -->
+<!-- http://stackoverflow.com/questions/4459058/alarm-manager-example -->
