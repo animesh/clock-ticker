@@ -1,3 +1,9 @@
-# view AndroidManifest.xml #generated:8
+# view AndroidManifest.xml #generated:24
 -keep class Clock.Reminder.Check { <init>(...); }
+
+# view AndroidManifest.xml #generated:16
+-keep class Clock.Reminder.HourlyReminder { <init>(...); }
+
+# view AndroidManifest.xml #generated:18
+-keep class Clock.Reminder.TickerBoot { <init>(...); }
 

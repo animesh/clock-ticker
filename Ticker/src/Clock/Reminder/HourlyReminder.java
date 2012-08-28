@@ -9,32 +9,28 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.PowerManager;
 import android.os.Vibrator;
-import android.widget.Toast;
 
 public class HourlyReminder extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        
+
         PowerManager hRemPM = (PowerManager) context.getSystemService(Context.POWER_SERVICE);
         PowerManager.WakeLock hRemWL = hRemPM.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "");
 
         hRemWL.acquire();
-
-        // Put here YOUR code.
         Vibrator v = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
-        v.vibrate(300);
-        Toast.makeText(context.getApplicationContext(), "Sample Text", Toast.LENGTH_LONG).show();
-
+        long[] pattern = {0, 50, 100, 50, 100, 50, 150, 200, 100, 200, 100, 200, 150, 50, 100, 50, 100, 50, 300};
+        v.vibrate(pattern, -1);
         hRemWL.release();
-        
+
     }
 
     public void SetAlarm(Context context) {
         AlarmManager hRemMan = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        Intent hRemP = new Intent(context, HourlyReminder.class);
-        PendingIntent hRemPI = PendingIntent.getBroadcast(context, 0, hRemP, 0);
-        hRemMan.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 1000 * 60 * 10, hRemPI); // Millisec * Second * Minute
+        Intent hRemI = new Intent(context, HourlyReminder.class);
+        PendingIntent hRemPI = PendingIntent.getBroadcast(context, 0, hRemI, 0);
+        hRemMan.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 1000 * 60 * 1, hRemPI); // Millisec * Second * Minute
     }
 
     public void CancelAlarm(Context context) {
@@ -46,3 +42,4 @@ public class HourlyReminder extends BroadcastReceiver {
 }
 
 // http://stackoverflow.com/questions/4459058/alarm-manager-example
+// http://code.google.com/p/clock-ticker/source/browse/Ticker/src/Clock/Reminder/Check.java?spec=svnb25282c6fd4dbe8383e5ec98354bfda0583115a8&r=b25282c6fd4dbe8383e5ec98354bfda0583115a8
