@@ -1,7 +1,4 @@
 package Clock.Reminder;
-/**
- * * @author sharma.animesh@gmail.com
- */
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
@@ -26,6 +23,8 @@ public class Check extends Service {
         return null;
     }
 }
+
+// @author sharma.animesh@gmail.com mashed up from following
 // http://stackoverflow.com/questions/11733736/alarmmanager-never-calling-onrecieve-in-alarmreceiver-broadcastreceiver
 // http://stackoverflow.com/questions/11167025/repeat-alarms-on-every-monday-in-android-usig-alarmmanager-broadcastreceiver
 // http://android.konreu.com/developer-how-to/vibration-examples-for-android-phone-development/
