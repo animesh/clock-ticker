@@ -32,7 +32,7 @@ public class HourlyReminder extends BroadcastReceiver {
         int offsetFromUtc = tz.getOffset(0);
         int min = (int) (((offsetFromUtc / 1000) / 60) % 60);
         long offsetTime = (System.currentTimeMillis() + min * 60 * 1000) % (1000 * 60 * 60);
-        hRemMan.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() - offsetTime, 1000 * 60 * 60, hRemPI); // Millisec * Second * Minute
+        hRemMan.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis() - offsetTime - 3*60*1000, 1000 * 60 * 60, hRemPI); // Millisec * Second * Minute
     }
 
     public void CancelAlarm(Context context) {
