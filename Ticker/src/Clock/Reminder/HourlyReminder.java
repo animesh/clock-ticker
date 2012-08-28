@@ -20,7 +20,7 @@ public class HourlyReminder extends BroadcastReceiver {
 
         hRemWL.acquire();
         Vibrator v = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
-        long[] pattern = {0, 50, 100, 50, 100, 50, 150, 200, 100, 200, 100, 200, 150, 50, 100, 50, 100, 50, 300};
+        long[] pattern = {0, 50, 150, 150, 100, 50, 150, 150, 150, 50, 150, 100, 100, 200}; // GOD in Morse Code :)
         v.vibrate(pattern, -1);
         hRemWL.release();
 
@@ -30,7 +30,7 @@ public class HourlyReminder extends BroadcastReceiver {
         AlarmManager hRemMan = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
         Intent hRemI = new Intent(context, HourlyReminder.class);
         PendingIntent hRemPI = PendingIntent.getBroadcast(context, 0, hRemI, 0);
-        hRemMan.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis(), 1000 * 60 * 1, hRemPI); // Millisec * Second * Minute
+        hRemMan.setRepeating(AlarmManager.RTC_WAKEUP, System.currentTimeMillis()-System.currentTimeMillis()%(1000 * 60 * 60), 1000 * 60 * 60, hRemPI); // Millisec * Second * Minute
     }
 
     public void CancelAlarm(Context context) {

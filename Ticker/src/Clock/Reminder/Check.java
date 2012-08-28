@@ -15,11 +15,9 @@ public class Check extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.v("Start Check", "onCreate");
     }
 
     public void onStart(Context context, Intent intent, int startId) {
-        Log.v("Start Check", "onStartCommand()");
         hRem.SetAlarm(context);
     }
 
