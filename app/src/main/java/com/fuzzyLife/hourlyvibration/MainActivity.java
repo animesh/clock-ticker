@@ -16,6 +16,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.provider.Settings;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -24,7 +26,9 @@ import java.util.Calendar;
 public class MainActivity extends AppCompatActivity {
 
     private static final String CHANNEL_ID = "hourly_vibration_channel";
-    private static final long ONE_HOUR_MILLIS = 60 * 60 * 1000; // 1 hour in milliseconds
+    private static final String TAG = "MainActivity";
+    private boolean isServiceScheduled = false; // Flag to track service status
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,13 +41,19 @@ public class MainActivity extends AppCompatActivity {
         Button stopButton = findViewById(R.id.stopButton);
 
         startButton.setOnClickListener(v -> {
-            scheduleHourlyVibration();
-            Toast.makeText(this, "Hourly vibration started", Toast.LENGTH_SHORT).show();
+            if (isServiceScheduled) {
+                Toast.makeText(this, "Hourly vibration is already started", Toast.LENGTH_SHORT).show();
+            } else {
+                scheduleHourlyVibration();
+            }
         });
 
         stopButton.setOnClickListener(v -> {
-            cancelHourlyVibration();
-            Toast.makeText(this, "Hourly vibration stopped", Toast.LENGTH_SHORT).show();
+            if (isServiceScheduled) {
+                cancelHourlyVibration(); // This method will show "stopped" toast and update flag
+            } else {
+                Toast.makeText(this, "No service running to stop.", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 
@@ -57,28 +67,45 @@ public class MainActivity extends AppCompatActivity {
                 PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT
         );
 
-        // Calculate the time for the next hour
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.MINUTE, 0);
         calendar.set(Calendar.SECOND, 0);
         calendar.set(Calendar.MILLISECOND, 0);
-        calendar.add(Calendar.HOUR, 1);
+        calendar.add(Calendar.HOUR_OF_DAY, 1);
 
-        // Schedule repeating alarm
         if (alarmManager != null) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                if (alarmManager.canScheduleExactAlarms()) {
+                    alarmManager.setExactAndAllowWhileIdle(
+                            AlarmManager.RTC_WAKEUP,
+                            calendar.getTimeInMillis(),
+                            pendingIntent
+                    );
+                    isServiceScheduled = true;
+                    Toast.makeText(this, "Hourly vibration started", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "Exact alarm permission not granted. Please enable it in settings.", Toast.LENGTH_LONG).show();
+                    Intent settingsIntent = new Intent(Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM);
+                    startActivity(settingsIntent);
+                    // isServiceScheduled remains false
+                }
+            } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 alarmManager.setExactAndAllowWhileIdle(
                         AlarmManager.RTC_WAKEUP,
                         calendar.getTimeInMillis(),
                         pendingIntent
                 );
+                isServiceScheduled = true;
+                Toast.makeText(this, "Hourly vibration started", Toast.LENGTH_SHORT).show();
             } else {
                 alarmManager.setRepeating(
                         AlarmManager.RTC_WAKEUP,
                         calendar.getTimeInMillis(),
-                        ONE_HOUR_MILLIS,
+                        AlarmManager.INTERVAL_HOUR,
                         pendingIntent
                 );
+                isServiceScheduled = true;
+                Toast.makeText(this, "Hourly vibration started", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -96,6 +123,10 @@ public class MainActivity extends AppCompatActivity {
         if (alarmManager != null) {
             alarmManager.cancel(pendingIntent);
         }
+        if (isServiceScheduled) { // Only show stopped if it was running
+            Toast.makeText(this, "Hourly vibration stopped", Toast.LENGTH_SHORT).show();
+        }
+        isServiceScheduled = false;
     }
 
     private void createNotificationChannel() {
@@ -105,7 +136,6 @@ public class MainActivity extends AppCompatActivity {
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
             channel.setDescription(description);
-
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             if (notificationManager != null) {
                 notificationManager.createNotificationChannel(channel);
@@ -113,11 +143,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // BroadcastReceiver to handle the vibration alarm
     public static class VibrationReceiver extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
-            // Vibrate the device
             Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
             if (vibrator != null && vibrator.hasVibrator()) {
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -127,11 +155,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
-            // Show a notification
             showNotification(context);
 
-            // Reschedule the alarm for the next hour (for Android M and above)
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            // Reschedule for the next exact hour only if not using setRepeating
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) { // For M and above, we use setExactAndAllowWhileIdle which needs rescheduling
                 AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
                 Intent alarmIntent = new Intent(context, VibrationReceiver.class);
                 PendingIntent pendingIntent = PendingIntent.getBroadcast(
@@ -142,34 +169,56 @@ public class MainActivity extends AppCompatActivity {
                 );
 
                 Calendar calendar = Calendar.getInstance();
-                calendar.add(Calendar.HOUR, 1);
+                calendar.set(Calendar.MINUTE, 0);
+                calendar.set(Calendar.SECOND, 0);
+                calendar.set(Calendar.MILLISECOND, 0);
+                calendar.add(Calendar.HOUR_OF_DAY, 1);
 
                 if (alarmManager != null) {
-                    alarmManager.setExactAndAllowWhileIdle(
-                            AlarmManager.RTC_WAKEUP,
-                            calendar.getTimeInMillis(),
-                            pendingIntent
-                    );
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                        if (alarmManager.canScheduleExactAlarms()) {
+                            alarmManager.setExactAndAllowWhileIdle(
+                                    AlarmManager.RTC_WAKEUP,
+                                    calendar.getTimeInMillis(),
+                                    pendingIntent
+                            );
+                        } else {
+                            Log.e(TAG, "Cannot reschedule exact alarm: permission not granted.");
+                        }
+                    } else { // This covers Android M to Android R (inclusive)
+                        alarmManager.setExactAndAllowWhileIdle(
+                                AlarmManager.RTC_WAKEUP,
+                                calendar.getTimeInMillis(),
+                                pendingIntent
+                        );
+                    }
                 }
             }
+            // For pre-M (SDK < 23), the initial setRepeating in MainActivity should suffice.
         }
 
         private void showNotification(Context context) {
             NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                     .setSmallIcon(android.R.drawable.ic_dialog_info)
                     .setContentTitle("Hourly Vibration")
-                    .setContentText("It's been an hour!")
+                    .setContentText("Vibrating now!")
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                     .setAutoCancel(true);
 
             NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
 
-            // Permission check would be needed here for Android 13+
-            // Omitted for brevity but should be implemented in a real app
             try {
-                notificationManager.notify(1, builder.build());
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    if (context.checkSelfPermission(android.Manifest.permission.POST_NOTIFICATIONS) == android.content.pm.PackageManager.PERMISSION_GRANTED) {
+                        notificationManager.notify(1, builder.build());
+                    } else {
+                        Log.e(TAG, "Cannot show notification: POST_NOTIFICATIONS permission not granted.");
+                    }
+                } else {
+                    notificationManager.notify(1, builder.build());
+                }
             } catch (SecurityException se) {
-                // Handle the case where notification permission is not granted
+                Log.e(TAG, "SecurityException showing notification: " + se.getMessage());
             }
         }
     }
