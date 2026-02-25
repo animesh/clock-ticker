@@ -10,13 +10,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="201dbe91-ce93-419a-9847-cabd05d1e3f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deviceManager.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fuzzyLife/hourlyvibration/BootReceiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fuzzyLife/hourlyvibration/VibrationReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/release/app-release.aab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/fuzzyLife/hourlyvibration/ExampleInstrumentedTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fuzzyLife/hourlyvibration/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fuzzyLife/hourlyvibration/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/fuzzyLife/hourlyvibration/ExampleUnitTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/Screenshot_2025-05-02-14-04-35-84_ba8298c0d0c1d096ec46a640848f3ca2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/Screenshot_2025-05-02-14-04-39-39_ba8298c0d0c1d096ec46a640848f3ca2 (1).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/Screenshot_2025-05-02-14-04-43-60_ba8298c0d0c1d096ec46a640848f3ca2 (1).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/buzz_feature_graphic (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/buzz_feature_graphic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/play_store_512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-hdpi/ic_launcher_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-hdpi/ic_launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-hdpi/ic_launcher_monochrome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-mdpi/ic_launcher_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-mdpi/ic_launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-mdpi/ic_launcher_monochrome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xhdpi/ic_launcher_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xhdpi/ic_launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xhdpi/ic_launcher_monochrome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xxhdpi/ic_launcher_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xxhdpi/ic_launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xxhdpi/ic_launcher_monochrome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xxxhdpi/ic_launcher_background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xxxhdpi/ic_launcher_foreground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xxxhdpi/ic_launcher_monochrome.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/privacy-policy.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,11 +58,28 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\animeshs\.android\avd\Medium_Phone.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[LocalEmulator::path=C:\Users\animeshs\.android\avd\Medium_Phone.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Hourly Vibration" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="GenerateSignedApkSettings">
     <option name="KEY_STORE_PATH" value="C:\Users\animeshs\buzz.jks" />
@@ -40,20 +89,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\animeshs\.gradle\wrapper\dists\gradle-8.13-bin\5xuhj0ry160q40clulazy9h7d\gradle-8.13" javaHome="F:\android\jbr" gradleVersion="8.13" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2wV9plxYeai91mmCB1MyDlAnhKr" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Android App.MainActivity.executor": "Run",
     "Android App.app.executor": "Run",
     "Android Instrumented Tests.All Tests.executor": "Run",
     "BundleExportedModule": "Hourly_Vibration.app",
-    "ExportBundle.BundlePathForHourly_Vibration.app": "C:\\Users\\animeshs\\AndroidStudioProjects\\HourlyVibration2\\app",
+    "ExportBundle.BundlePathForHourly_Vibration.app": "C:\\Users\\animeshs\\clock-ticker",
+    "GradleDaemonJvmCriteriaMigrationNotification.isNotificationDisabled": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -63,8 +118,8 @@
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/animeshs/clock-ticker/README.md",
-    "settings.editor.selected.configurable": "studioLabs"
+    "last_opened_file_path": "C:/Users/animeshs/clock-ticker",
+    "settings.editor.selected.configurable": "com.android.studio.ml.permissions"
   },
   "keyToStringList": {
     "ExportApk.BuildVariants": [
@@ -72,7 +127,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Android App.app">
+  <component name="RunManager" selected="Android App.MainActivity">
     <configuration name="MainActivity" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false" temporary="true">
       <module name="Hourly_Vibration.app" />
       <option name="ANDROID_RUN_CONFIGURATION_SCHEMA_VERSION" value="1" />
@@ -227,9 +282,6 @@
       <option name="TEST_NAME_REGEX" value="" />
       <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
       <option name="EXTRA_OPTIONS" value="" />
-      <option name="RETENTION_ENABLED" value="No" />
-      <option name="RETENTION_MAX_SNAPSHOTS" value="2" />
-      <option name="RETENTION_COMPRESS_SNAPSHOTS" value="false" />
       <option name="CLEAR_LOGCAT" value="false" />
       <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
       <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
@@ -281,8 +333,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Android Instrumented Tests.All Tests" />
         <item itemvalue="Android App.MainActivity" />
+        <item itemvalue="Android Instrumented Tests.All Tests" />
       </list>
     </recent_temporary>
   </component>
@@ -312,12 +364,12 @@
         </entry>
         <entry key="com.fuzzyLife.hourlyvibration">
           <value>
-            <CheckInfo lastCheckTimestamp="1753351152727" />
+            <CheckInfo lastCheckTimestamp="1772024348683" />
           </value>
         </entry>
         <entry key="com.fuzzyLife.hourlyvibration.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1753351152727" />
+            <CheckInfo lastCheckTimestamp="1772024348682" />
           </value>
         </entry>
       </map>
