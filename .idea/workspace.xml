@@ -10,45 +10,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="201dbe91-ce93-419a-9847-cabd05d1e3f3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fuzzyLife/hourlyvibration/BootReceiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/fuzzyLife/hourlyvibration/VibrationReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/markdown.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/studiobot.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DEVELOPMENT_EVOLUTION.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RELEASE_PROCESS.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_buzz.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/release/app-debug.apk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/release/app-release.aab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/fuzzyLife/hourlyvibration/ExampleInstrumentedTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fuzzyLife/hourlyvibration/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fuzzyLife/hourlyvibration/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/fuzzyLife/hourlyvibration/ExampleUnitTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/Screenshot_2025-05-02-14-04-35-84_ba8298c0d0c1d096ec46a640848f3ca2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/Screenshot_2025-05-02-14-04-39-39_ba8298c0d0c1d096ec46a640848f3ca2 (1).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/Screenshot_2025-05-02-14-04-43-60_ba8298c0d0c1d096ec46a640848f3ca2 (1).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/buzz_feature_graphic (1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/buzz_feature_graphic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/play_store_512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-hdpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-hdpi/ic_launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-hdpi/ic_launcher_monochrome.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-mdpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-mdpi/ic_launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-mdpi/ic_launcher_monochrome.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xhdpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xhdpi/ic_launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xhdpi/ic_launcher_monochrome.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xxhdpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xxhdpi/ic_launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xxhdpi/ic_launcher_monochrome.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xxxhdpi/ic_launcher_background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xxxhdpi/ic_launcher_foreground.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ico/res/mipmap-xxxhdpi/ic_launcher_monochrome.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/privacy-policy.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/fuzzyLife/hourlyvibration/VibrationReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/fuzzyLife/hourlyvibration/VibrationReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/release/app-release.aab" beforeDir="false" afterPath="$PROJECT_DIR$/release/app-release.aab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +66,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\animeshs\.gradle\wrapper\dists\gradle-8.13-bin\5xuhj0ry160q40clulazy9h7d\gradle-8.13" javaHome="F:\android\jbr" gradleVersion="8.13" />
+  <component name="GradleScriptDefinitionsStorage" workingDir="$PROJECT_DIR$" gradleHome="C:\Users\animeshs\.gradle\wrapper\dists\gradle-9.3.1-bin\23ovyewtku6u96viwx3xl3oks\gradle-9.3.1" javaHome="F:\android\jbr" gradleVersion="9.3.1" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -101,32 +78,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Android App.MainActivity.executor": "Run",
-    "Android App.app.executor": "Run",
-    "Android Instrumented Tests.All Tests.executor": "Run",
-    "BundleExportedModule": "Hourly_Vibration.app",
-    "ExportBundle.BundlePathForHourly_Vibration.app": "C:\\Users\\animeshs\\clock-ticker",
-    "GradleDaemonJvmCriteriaMigrationNotification.isNotificationDisabled": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/animeshs/clock-ticker",
-    "settings.editor.selected.configurable": "com.android.studio.ml.permissions"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Android App.MainActivity.executor&quot;: &quot;Run&quot;,
+    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
+    &quot;Android Instrumented Tests.All Tests.executor&quot;: &quot;Run&quot;,
+    &quot;BundleExportedModule&quot;: &quot;Hourly_Vibration.app&quot;,
+    &quot;ExportBundle.BundlePathForHourly_Vibration.app&quot;: &quot;C:\\Users\\animeshs\\clock-ticker&quot;,
+    &quot;GradleDaemonJvmCriteriaMigrationNotification.isNotificationDisabled&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/animeshs/clock-ticker&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.android.studio.ml.permissions&quot;
   },
-  "keyToStringList": {
-    "ExportApk.BuildVariants": [
-      "release"
+  &quot;keyToStringList&quot;: {
+    &quot;ExportApk.BuildVariants&quot;: [
+      &quot;release&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Android App.MainActivity">
     <configuration name="MainActivity" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false" temporary="true">
       <module name="Hourly_Vibration.app" />
@@ -364,12 +343,12 @@
         </entry>
         <entry key="com.fuzzyLife.hourlyvibration">
           <value>
-            <CheckInfo lastCheckTimestamp="1772024348683" />
+            <CheckInfo lastCheckTimestamp="1775210472530" />
           </value>
         </entry>
         <entry key="com.fuzzyLife.hourlyvibration.test">
           <value>
-            <CheckInfo lastCheckTimestamp="1772024348682" />
+            <CheckInfo lastCheckTimestamp="1775210472528" />
           </value>
         </entry>
       </map>
